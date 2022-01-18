@@ -45,6 +45,17 @@ class ProductsController extends Controller
     }
 
     /**
+     * Search for a resource.
+     *
+     * @param  str  $name
+     * @return \Illuminate\Http\Response
+     */
+    public function search($name)
+    {
+        return Product::where('name', 'like', '%'.$name.'%')->get();
+    }
+
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
