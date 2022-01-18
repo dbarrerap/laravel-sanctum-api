@@ -26,6 +26,7 @@ Route::get('/products/{id}', [ProductsController::class, 'show']);
 Route::get('/products/search/{name}', [ProductsController::class, 'search']);
 
 Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 
 // Protected Routes
 Route::middleware(['auth:sanctum'])->group(function() {
